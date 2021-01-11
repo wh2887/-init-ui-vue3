@@ -1,18 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <h1>导航栏</h1>
+  <router-link to="/">第一个组件</router-link>
+  <br>
+  <router-link to="/xxx">第二个组件</router-link>
+  <hr/>
+
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import {defineComponent} from 'vue';
+import McCall from './components/McCall.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    McCall
   }
-})
+});
 </script>
 
 <style>
