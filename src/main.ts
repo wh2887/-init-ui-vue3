@@ -1,12 +1,11 @@
 import {createApp} from 'vue';
 import App from './App.vue';
 import {createRouter, createWebHashHistory} from 'vue-router';
-import McCall from './components/McCall.vue';
-import McCall2 from './components/McCall2.vue';
+import Home from './views/Home.vue';
+import './assets/styles/reset.scss';
 
 const routes = [
-  {path: '/', component: McCall},
-  {path:'/xxx',component: McCall2}
+  {path: '/', component: Home},
 ];
 
 const router = createRouter({
@@ -14,6 +13,6 @@ const router = createRouter({
   routes
 });
 
-const app = createApp(App)
-app.use(router)
+const app = createApp(App);
+app.use(router);
 app.mount('#app');
