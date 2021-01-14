@@ -5,8 +5,8 @@
       <h1>Init UI</h1>
       <h2>一个简单的 UI 框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a>
+        <a href="https://github.com/wh2887/-init-ui-vue3">GitHub</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
