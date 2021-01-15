@@ -1,12 +1,17 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleMenu">
-      <img src="src/assets/logo.png" alt="">
+    <div class="logo">
+      <img src="src/assets/logo-top.png" alt="">
     </div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
+    <div class="toggleAside" @click="toggleMenu">
+      <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-main"></use>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -16,10 +21,7 @@ import {inject, Ref} from 'vue';
 export default {
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible');
-    const toggleMenu = () => {
-      console.log('x');
-      menuVisible.value = !menuVisible.value;
-    };
+    const toggleMenu = () => { menuVisible.value = !menuVisible.value; };
     return {toggleMenu};
   }
 };
@@ -32,20 +34,63 @@ export default {
   padding: 16px;
   position: relative;
   z-index: 10;
+  justify-content: center;
+  align-items: center;
 
   > .logo {
-    max-width: 6em;
     margin-right: auto;
+    display: flex;
+    align-items: center;
+
+    > img {
+      max-height: 1.5em;
+      max-width: 100%;
+    }
   }
 
   > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    align-items: center;
+
 
     > li {
       margin: 0 1em;
     }
   }
+
+  > .toggleMenu {}
+
+  > .toggleAside {
+    display: none;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
+    }
+    > .toggleAside {
+      display: inline-block;
+    }
+  }
 }
+
+.icon {
+  width: 100%; height: 100%;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+
 </style>
