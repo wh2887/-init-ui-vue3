@@ -8,17 +8,19 @@
       <li>菜单2</li>
     </ul>
     <div class="toggleAside" @click="toggleMenu">
-      <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-main"></use>
-      </svg>
+      <Icon name="main"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
+import Icon from './Icon.vue';
 
 export default {
+  components: {
+    Icon
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible');
     const toggleMenu = () => { menuVisible.value = !menuVisible.value; };
@@ -81,15 +83,9 @@ export default {
     }
     > .toggleAside {
       display: inline-block;
+      font-size: 1.5em;
     }
   }
-}
-
-.icon {
-  width: 100%; height: 100%;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
 }
 
 
