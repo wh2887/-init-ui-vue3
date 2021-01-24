@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
-    <div class="logo">
-      <img src="src/assets/logo-top.png" alt="">
+    <div class="logo" @click="goBackHome">
+      <img src="src/assets/logo-top.png" alt="回到首页">
     </div>
     <ul class="menu">
       <li>菜单1</li>
@@ -20,6 +20,11 @@ import Icon from './Icon.vue';
 export default {
   components: {
     Icon
+  },
+  methods: {
+    goBackHome() {
+      this.$router.push('/');
+    }
   },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible');
@@ -87,6 +92,4 @@ export default {
     }
   }
 }
-
-
 </style>
