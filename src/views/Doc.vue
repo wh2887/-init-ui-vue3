@@ -71,7 +71,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: #F3F3F3;
   }
 }
 
