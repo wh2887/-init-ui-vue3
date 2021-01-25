@@ -5,13 +5,10 @@
       <h1>Init UI</h1>
       <h2>一个简单的 UI 框架</h2>
       <p class="actions">
-<<<<<<< HEAD
         <a href="https://github.com/wh2887/-init-ui-vue3">GitHub</a>
         <router-link to="/doc">开始</router-link>
-=======
         <a>GitHub</a>
         <a>开始 Hello World</a>
->>>>>>> origin/main
       </p>
     </div>
   </div>
