@@ -6,7 +6,7 @@
       <h2>一个厉害的 UI 框架</h2>
       <p class="actions">
         <a>GitHub</a>
-        <a>开始</a>
+        <a>开始 Hello World</a>
       </p>
     </div>
   </div>
