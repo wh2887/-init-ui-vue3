@@ -15,13 +15,18 @@ export default {
     size: {
       type: String,
       default: 'normal'
-    }
+    },
+    theme: {
+      type: String,
+      default: 'button'
+    },
   },
   setup(props) {
-    const {size} = props;
+    const {size, theme} = props;
     const classes = computed(() => {
       return {
-        [`init-size-${size}`]: size
+        [`init-size-${size}`]: size,
+        [`init-theme-${theme}`]: theme,
       };
     });
 
@@ -48,6 +53,7 @@ export default {
 
 <style lang="scss">
 @import "src/lib/styles/helper.scss";
+
 $radius: 4px;
 $h: 32px;
 
@@ -65,6 +71,7 @@ $h: 32px;
   color: $light-grey-6;
   position: relative;
   overflow: hidden;
+
   & + & {
     margin-left: 8px;
   }
@@ -72,22 +79,37 @@ $h: 32px;
   &:hover {
     background: rgba($light-green, .9);
   }
+
   &:focus {
     outline: none;
   }
+
   &::-moz-focus-inner {
     border: 0;
   }
 
-  &.init-size-big{
+  &.init-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.init-size-small{
+
+  &.init-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
+  }
+
+  &.init-theme-link {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: $light-green;
+
+    //&:hover,
+    //&:focus {
+    //  color: lighten($light-green, 10%);
+    //}
   }
 
   > .init-button-ripple {
