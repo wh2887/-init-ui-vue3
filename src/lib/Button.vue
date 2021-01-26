@@ -42,7 +42,7 @@ export default {
       circle.classList.add('init-button-ripple');
       const ripple = button.getElementsByClassName('init-button-ripple')[0];
       ripple && ripple.remove();
-      button.appendChild(circle);
+      theme !== 'link' && button.appendChild(circle);
     };
 
     return {classes, onClick};
@@ -106,10 +106,21 @@ $h: 32px;
     box-shadow: none;
     color: $light-green;
 
-    //&:hover,
-    //&:focus {
-    //  color: lighten($light-green, 10%);
-    //}
+    &:hover,
+    &:focus {
+      color: lighten($light-green, 10%);
+    }
+
+    &:active {
+      color: darken($light-green, 5%);
+    }
+  }
+
+  &.init-theme-text {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: $light-green;
   }
 
   > .init-button-ripple {

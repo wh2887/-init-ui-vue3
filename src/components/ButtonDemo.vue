@@ -7,7 +7,7 @@
     <Button size="big"> big</Button>
   </div>
   <hr/>
-  <h3>示例1： theme 属性</h3>
+  <h3>示例2： theme 属性</h3>
   <div>
     <Button theme="button"> button</Button>
     <Button theme="link"> link</Button>
