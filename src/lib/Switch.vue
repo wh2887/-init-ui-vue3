@@ -20,10 +20,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/lib/styles/helper.scss";
+
 $h: 22px;
 $h2: $h - 4px;
 .init-switch {
-  width: $h*2; height: $h; background: #C7C6C1;
+  width: $h*2; height: $h; background: $light-grey-5;
   border: none; border-radius: $h/2; position: relative;
 
   > span {
@@ -33,7 +35,7 @@ $h2: $h - 4px;
   }
 
   &.init-checked {
-    background: #3EAF7C;
+    background: $light-green;
 
     > span {
       left: calc(100% - #{$h2} - 2px);
