@@ -1,17 +1,31 @@
 <template>
-  <button class="init-button" v-bind="$attrs"
-          @click="onClick"
+  <button class="init-button" v-bind="$attrs" @click="onClick"
+          :class="classes"
   >
-    <span class="init-button-text">
-      <slot/>
-    </span>
+    <slot/>
   </button>
 </template>
 
 <script lang="ts">
+import {computed} from 'vue';
+
 export default {
   inheritAttrs: false,
-  setup() {
+  props: {
+    size: {
+      type: String,
+      default: 'normal'
+    }
+  },
+  setup(props) {
+    const {size} = props;
+    const classes = computed(() => {
+      return {
+        [`init-size-${size}`]: size
+      };
+    });
+
+
     const onClick = (e: MouseEvent) => {
       const button = e.currentTarget;
       const circle = document.createElement('span');
@@ -22,13 +36,11 @@ export default {
       circle.style.top = `${e.clientY - (button.offsetTop + radius)}px`;
       circle.classList.add('init-button-ripple');
       const ripple = button.getElementsByClassName('init-button-ripple')[0];
-      if (ripple) {
-        ripple.remove();
-      }
+      ripple && ripple.remove();
       button.appendChild(circle);
     };
 
-    return {onClick};
+    return {classes, onClick};
   }
 
 };
@@ -36,19 +48,46 @@ export default {
 
 <style lang="scss">
 @import "src/lib/styles/helper.scss";
+$radius: 4px;
+$h: 32px;
 
 .init-button {
   background: $light-green;
-  padding: 4px 16px;
-  border-radius: 4px;
+  height: $h;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: $radius;
   border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
   color: $light-grey-6;
-  margin: 10px;
   position: relative;
   overflow: hidden;
+  & + & {
+    margin-left: 8px;
+  }
 
   &:hover {
     background: rgba($light-green, .9);
+  }
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &.init-size-big{
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.init-size-small{
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 
   > .init-button-ripple {
@@ -56,11 +95,7 @@ export default {
     border-radius: 50%;
     transform: scale(0);
     animation: ripple 600ms linear;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-
-  > .init-button-text {
-    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 
