@@ -14,7 +14,7 @@ export default {
   components: {Button},
   setup() {
     const onClick = (value: String) => {
-      console.log(value);
+      // console.log(value);
     };
 
     return {onClick};
