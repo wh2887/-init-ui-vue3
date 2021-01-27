@@ -30,7 +30,7 @@ export default {
     }
   },
   setup(props) {
-    const {size, theme, level,disabled} = props;
+    const {size, theme, level, disabled} = props;
     const classes = computed(() => {
       return {
         [`init-size-${size}`]: size,
@@ -95,7 +95,6 @@ $h: 32px;
         background: rgba($light-green, .9);
       }
     }
-
     &.init-level-danger {
       background: $light-red;
 
@@ -103,52 +102,81 @@ $h: 32px;
         background: rgba($light-red, .9);
       }
     }
-
+    &[disabled] {
+      cursor: not-allowed;
+      background: rgba($light-grey-4,.9);
+      color: $light-grey-2;
+    }
   }
+
   &.init-theme-link {
     background: transparent; border-color: transparent; box-shadow: none; color: $dark-grey-4;
     &:hover, &:focus {
       color: lighten($dark-grey-4, 10%);
     }
+
     &:active { color: darken($dark-grey-4, 10%); }
     &.init-level-main {
       color: $light-green;
+
       &:hover, &:focus {
         color: lighten($light-green, 10%);
       }
+
       &:active { color: darken($light-green, 10%); }
     }
     &.init-level-danger {
       color: $light-red;
+
       &:hover, &:focus {
         color: lighten($light-red, 10%);
       }
+
       &:active { color: darken($dark-red, 10%); }
     }
-  }
-  &.init-theme-text {
-    background: transparent; border-color: transparent; color: $dark-grey-4;
-    &:hover, &:focus {
-      color: lighten($dark-grey-4, 10%); background: rgba($dark-grey-4, .1);
-    }
-    &:active { background: rgba($dark-grey-4, .2); }
-    &.init-level-main {
-      color: $light-green;
-      &:hover, &:focus {
-        color: lighten($light-green, 10%); background: rgba($light-green, .1);
-      }
-      &:active { background: rgba($light-green, .2); }
-    }
-    &.init-level-danger {
-      color: $light-red;
-      &:hover, &:focus {
-        color: lighten($light-red, 10%); background: rgba($light-red, .1);
-      }
-      &:active { background: rgba($light-red, .2); }
+    &[disabled] {
+      cursor: not-allowed;
+      color: $light-grey-2;
     }
   }
 
-  &.init-theme-button{}
+  &.init-theme-text {
+    background: transparent; border-color: transparent; color: $dark-grey-4;
+
+    &:hover, &:focus {
+      color: lighten($dark-grey-4, 10%); background: rgba($dark-grey-4, .1);
+    }
+
+    &:active { background: rgba($dark-grey-4, .2); }
+
+    &.init-level-main {
+      color: $light-green;
+
+      &:hover, &:focus {
+        color: lighten($light-green, 10%); background: rgba($light-green, .1);
+      }
+
+      &:active { background: rgba($light-green, .2); }
+    }
+
+    &.init-level-danger {
+      color: $light-red;
+
+      &:hover, &:focus {
+        color: lighten($light-red, 10%); background: rgba($light-red, .1);
+      }
+
+      &:active { background: rgba($light-red, .2); }
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      color: $light-grey-2;
+      &:hover, &:focus {
+        background: inherit;
+      }
+    }
+  }
+
   > .init-button-ripple {
     position: absolute; border-radius: 50%; transform: scale(0);
     animation: ripple 600ms linear; background-color: rgba(255, 255, 255, 0.5);
