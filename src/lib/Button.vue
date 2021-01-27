@@ -2,6 +2,7 @@
   <button class="init-button" @click="onClick"
           :class="classes" :disabled="disabled"
   >
+    <span v-if="loading" class="init-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -25,6 +26,10 @@ export default {
       default: 'normal'
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -62,7 +67,6 @@ export default {
 
 $radius: 4px;
 $h: 32px;
-
 .init-button {
   background: $dark-grey-4; height: $h;
   padding: 0 12px; cursor: pointer; border-radius: $radius; border: none;
@@ -95,6 +99,7 @@ $h: 32px;
         background: rgba($light-green, .9);
       }
     }
+
     &.init-level-danger {
       background: $light-red;
 
@@ -102,20 +107,23 @@ $h: 32px;
         background: rgba($light-red, .9);
       }
     }
+
     &[disabled] {
       cursor: not-allowed;
-      background: rgba($light-grey-4,.9);
+      background: rgba($light-grey-4, .9);
       color: $light-grey-2;
     }
   }
 
   &.init-theme-link {
     background: transparent; border-color: transparent; box-shadow: none; color: $dark-grey-4;
+
     &:hover, &:focus {
       color: lighten($dark-grey-4, 10%);
     }
 
     &:active { color: darken($dark-grey-4, 10%); }
+
     &.init-level-main {
       color: $light-green;
 
@@ -125,6 +133,7 @@ $h: 32px;
 
       &:active { color: darken($light-green, 10%); }
     }
+
     &.init-level-danger {
       color: $light-red;
 
@@ -134,6 +143,7 @@ $h: 32px;
 
       &:active { color: darken($dark-red, 10%); }
     }
+
     &[disabled] {
       cursor: not-allowed;
       color: $light-grey-2;
@@ -168,19 +178,35 @@ $h: 32px;
 
       &:active { background: rgba($light-red, .2); }
     }
+
     &[disabled] {
       cursor: not-allowed;
       color: $light-grey-2;
+
       &:hover, &:focus {
         background: inherit;
       }
     }
   }
 
+  > .init-loadingIndicator {
+    width: 14px;
+    height: 14px;border-radius: 8px;
+    margin-right: 4px;
+    border-color: $light-green transparent transparent transparent;
+    border-style: solid;border-width: 2px;
+    animation: init-spin 1s infinite linear;
+  }
+
   > .init-button-ripple {
     position: absolute; border-radius: 50%; transform: scale(0);
     animation: ripple 600ms linear; background-color: rgba(255, 255, 255, 0.5);
   }
+}
+
+@keyframes init-spin {
+  0%{ transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes ripple {

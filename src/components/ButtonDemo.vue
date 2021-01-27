@@ -36,6 +36,10 @@
     <Button theme="link" disabled> link</Button>
     <Button theme="text" disabled> text</Button>
   </div>
+  <h3>示例5： loading 属性</h3>
+  <div>
+    <Button loading> button</Button>
+  </div>
 </template>
 
 <script lang="ts">
