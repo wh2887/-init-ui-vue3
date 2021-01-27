@@ -1,6 +1,6 @@
 <template>
-  <button class="init-button" v-bind="$attrs" @click="onClick"
-          :class="classes"
+  <button class="init-button" @click="onClick"
+          :class="classes" :disabled="disabled"
   >
     <slot/>
   </button>
@@ -23,10 +23,14 @@ export default {
     level: {
       type: String,
       default: 'normal'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
-    const {size, theme, level} = props;
+    const {size, theme, level,disabled} = props;
     const classes = computed(() => {
       return {
         [`init-size-${size}`]: size,
@@ -113,8 +117,10 @@ $h: 32px;
     }
 
     &:active { color: darken($dark-grey-4, 10%); }
-    &.init-level-main{
+
+    &.init-level-main {
       color: $light-green;
+
       &:hover, &:focus {
         color: lighten($light-green, 10%);
       }
@@ -144,15 +150,18 @@ $h: 32px;
 
     &.init-level-main {
       color: $light-green;
+
       &:hover, &:focus {
         color: lighten($light-green, 10%); background: rgba($light-green, .1);
       }
+
       &:active { background: rgba($light-green, .2); }
 
     }
 
     &.init-level-danger {
       color: $light-red;
+
       &:hover, &:focus {
         color: lighten($light-red, 10%); background: rgba($light-red, .1);
       }
@@ -160,6 +169,8 @@ $h: 32px;
       &:active { background: rgba($light-red, .2); }
     }
   }
+
+  &.init-theme-button
 
   > .init-button-ripple {
     position: absolute; border-radius: 50%; transform: scale(0);

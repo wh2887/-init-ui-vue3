@@ -30,6 +30,12 @@
       <Button theme="text" level="danger"> text danger</Button>
     </div>
   </div>
+  <h3>示例4： disabled 属性</h3>
+  <div>
+    <Button disabled> button</Button>
+    <Button theme="link" disabled> link</Button>
+    <Button theme="text" disabled> text</Button>
+  </div>
 </template>
 
 <script lang="ts">
