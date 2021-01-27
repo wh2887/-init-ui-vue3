@@ -1,8 +1,9 @@
 <template>
+<template v-if="visible">
   <div class="init-dialog-overlay"></div>
   <div class="init-dialog-wrapper">
     <div class="init-dialog">
-      <header>标题</header>
+      <header>标题 <span class="init-dialog-close"></span></header>
       <main>
         <p>第一行字</p>
         <p>第二行字</p>
@@ -14,12 +15,19 @@
     </div>
   </div>
 </template>
+</template>
 
 <script lang="ts">
 import Button from './Button.vue';
 
 export default {
-  components: {Button}
+  components: {Button},
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 
