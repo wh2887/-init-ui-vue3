@@ -42,6 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/lib/styles/helper.scss";
 .layout {
   display: flex;
   flex-direction: column;
@@ -71,7 +72,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: #F3F3F3;
+    background: $light-grey-6;
   }
 }
 
