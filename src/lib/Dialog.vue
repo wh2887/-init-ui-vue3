@@ -1,4 +1,5 @@
 <template>
+<template v-if="visible">
   <div class="init-dialog-overlay"></div>
   <div class="init-dialog-wrapper">
     <div class="init-dialog">
@@ -14,12 +15,19 @@
     </div>
   </div>
 </template>
+</template>
 
 <script lang="ts">
 import Button from './Button.vue';
 
 export default {
-  components: {Button}
+  components: {Button},
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 
