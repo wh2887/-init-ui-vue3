@@ -1,5 +1,5 @@
 <template>
-  <button class="init-button" @click="onClick"
+  <button class="init-button" @click="onClick" v-bind="$attrs"
           :class="classes" :disabled="disabled"
   >
     <span v-if="loading" class="init-loadingIndicator"></span>
