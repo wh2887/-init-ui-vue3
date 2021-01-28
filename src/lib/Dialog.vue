@@ -1,22 +1,22 @@
 <template>
   <template v-if="visible">
     <Teleport to="body">
-    <div class="init-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="init-dialog-wrapper">
-      <div class="init-dialog">
-        <header>
-          <slot name="title"/>
-          <span class="init-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+      <div class="init-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="init-dialog-wrapper">
+        <div class="init-dialog">
+          <header>
+            <slot name="title"/>
+            <span class="init-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
     </Teleport>
   </template>
 </template>
@@ -52,15 +52,15 @@ export default {
       }
     };
     const ok = () => {
-      if (props.ok?.() !==false){
-        close()
+      if (props.ok?.() !== false) {
+        close();
       }
-    }
+    };
     const cancel = () => {
-      context.emit('cancel')
-      close()
-    }
-    return {close, onClickOverlay,ok,cancel};
+      props.cancel?.()
+      close();
+    };
+    return {close, onClickOverlay, ok, cancel};
   },
 };
 </script>
