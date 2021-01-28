@@ -3,10 +3,12 @@
     <div class="init-dialog-overlay" @click="onClickOverlay"></div>
     <div class="init-dialog-wrapper">
       <div class="init-dialog">
-        <header>标题 <span class="init-dialog-close" @click="close"></span></header>
+        <header>
+          <slot name="title"/>
+          <span class="init-dialog-close" @click="close"></span>
+        </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content"/>
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
