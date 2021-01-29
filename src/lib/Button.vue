@@ -9,6 +9,7 @@
 
 <script lang="ts">
 import {computed} from 'vue';
+import {useRipple} from './useRipple';
 
 export default {
   inheritAttrs: false,
@@ -44,19 +45,8 @@ export default {
       };
     });
     const onClick = (e: MouseEvent) => {
-      const button = e.currentTarget;
-      const circle = document.createElement('span');
-      const diameter = Math.max(button.clientWidth, button.clientHeight);
-      const radius = diameter / 2;
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${e.clientX - (button.offsetLeft + radius)}px`;
-      circle.style.top = `${e.clientY - (button.offsetTop + radius)}px`;
-      circle.classList.add('init-button-ripple');
-      const ripple = button.getElementsByClassName('init-button-ripple')[0];
-      ripple && ripple.remove();
-      theme !== 'link' && button.appendChild(circle);
+      useRipple(e, theme);
     };
-
     return {classes, onClick};
   }
 };
@@ -73,7 +63,7 @@ $h: 32px;
   display: inline-flex; justify-content: center; align-items: center; white-space: nowrap;
   color: $light-grey-6; position: relative; overflow: hidden;
 
-  & + & {
+  &.init-theme-button + &.init-theme-button, &.init-theme-link + &.init-theme-link {
     margin-left: 8px;
   }
 
@@ -152,9 +142,22 @@ $h: 32px;
 
   &.init-theme-text {
     background: transparent; border-color: transparent; color: $dark-grey-4;
+    position: relative;
 
     &:hover, &:focus {
       color: lighten($dark-grey-4, 10%); background: rgba($dark-grey-4, .1);
+      border-radius: 0;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $h - 2px;
+        border-bottom: 2px solid $dark-grey-4;
+      }
     }
 
     &:active { background: rgba($dark-grey-4, .2); }
@@ -164,6 +167,10 @@ $h: 32px;
 
       &:hover, &:focus {
         color: lighten($light-green, 10%); background: rgba($light-green, .1);
+
+        &:after {
+          border-bottom: 2px solid $light-green;
+        }
       }
 
       &:active { background: rgba($light-green, .2); }
@@ -174,6 +181,10 @@ $h: 32px;
 
       &:hover, &:focus {
         color: lighten($light-red, 10%); background: rgba($light-red, .1);
+
+        &:after {
+          border-bottom: 2px solid $light-red;
+        }
       }
 
       &:active { background: rgba($light-red, .2); }
@@ -205,7 +216,7 @@ $h: 32px;
 }
 
 @keyframes init-spin {
-  0%{ transform: rotate(0deg); }
+  0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
