@@ -1,15 +1,17 @@
 <template>
   <div>
     Tabs 组件
-    <div v-for="(t,index) in titles" :key="index">{{ t }}</div>
+    <Button theme="text" level="main" v-for="(t,index) in titles" :key="index">{{ t }}</Button>
     <component v-for="(c,index) in defaults" :is="c" :key="index"/>
   </div>
 </template>
 
 <script lang="ts">
 import Tab from './Tab.vue';
+import Button from './Button.vue';
 
 export default {
+  components: {Button},
   setup(props, content) {
     const defaults = content.slots.default();
     // console.log(defaults[0].type === Tab);
