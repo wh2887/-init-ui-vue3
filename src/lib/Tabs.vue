@@ -29,14 +29,12 @@ export default {
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    let left;
-    let number = ref(0);
     const moveBottom = () => {
       const {width} = selectedItem.value.getBoundingClientRect();
       indicator.value.style.width = width + 'px';
       const {left: left1} = container.value.getBoundingClientRect();
       const {left: left2} = selectedItem.value.getBoundingClientRect();
-      left = left2 - left1;
+      const left = left2 - left1;
       indicator.value.style.left = left + 'px';
     };
     onMounted(() => { moveBottom(); });
@@ -46,7 +44,6 @@ export default {
     const current = computed(() => { return defaults.find(tag => tag.props.title === props.selected); });
     const titles = defaults.map(tag => {return tag.props.title;});
     const select = (title: string) => {
-      number.value += 1;
       content.emit('update:selected', title);
     };
     return {current, defaults, titles, select, selectedItem, indicator, container};
