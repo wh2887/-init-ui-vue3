@@ -1,8 +1,8 @@
 // Color Chart
 $light-blue: #007AFF;
 $dark-blue: #0A84FF;
-$light-green: #34C759;
-$dark-green:#30D158;
+$light-green: #34C759;  //main
+$dark-green: #30D158;
 $light-indigo: #5856D6;
 $dark-indigo: #5E5CE6;
 $light-orange: #FF9500;
@@ -11,7 +11,7 @@ $light-pink: #FF2D55;
 $dark-pink: #FF375F;
 $light-purple: #AF52DE;
 $dark-purple: #BF5AF2;
-$light-red: #FF3B30;
+$light-red: #FF3B30; //danger
 $dark-red: #FF453A;
 $light-teal: #5AC8FA;
 $dark-teal: #64D2FF;
@@ -19,13 +19,13 @@ $light-yellow: #FFCC00;
 $dark-yellow: #FFD60A;
 
 $grey: #8E8E93;
-$light-grey-2:#AEAEB2;
-$dark-grey-2:#636366;
+$light-grey-2: #AEAEB2; // disabled
+$dark-grey-2: #636366;
 
-$light-grey-4:#D1D1D6;
-$dark-grey-4:#3A3A3C;
+$light-grey-4: #D1D1D6; //disabled
+$dark-grey-4: #3A3A3C;
 
-$light-grey-5: #E5E5EA;
+$light-grey-5: #E5E5EA; // border
 $dark-grey-5: #2C2C2E;
-$light-grey-6: #F2F2F7;
-$dark-grey-6: #1C1C1E;
+$light-grey-6: #F2F2F7; // font
+$dark-grey-6: #1C1C1E; // bg

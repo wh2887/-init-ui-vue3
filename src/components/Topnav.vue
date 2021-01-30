@@ -4,8 +4,12 @@
       <img src="src/assets/logo-top.png" alt="回到首页">
     </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
+      <li>
+        <router-link to="/doc/switch">组件</router-link>
+      </li>
     </ul>
     <div class="toggleAside" @click="toggleMenu">
       <Icon name="main"/>
@@ -35,8 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$main: #2143C8;
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -63,10 +67,15 @@ export default {
     white-space: nowrap;
     flex-wrap: nowrap;
     align-items: center;
+    color: $main;
 
 
     > li {
       margin: 0 1em;
+
+      > a {
+        border: none;
+      }
     }
   }
 

@@ -58,7 +58,7 @@ export default {
 $radius: 4px;
 $h: 32px;
 .init-button {
-  background: $dark-grey-4; height: $h;
+  background: $dark-grey-6; height: $h;
   padding: 0 12px; cursor: pointer; border-radius: $radius; border: none;
   display: inline-flex; justify-content: center; align-items: center; white-space: nowrap;
   color: $light-grey-6; position: relative; overflow: hidden;
@@ -67,7 +67,7 @@ $h: 32px;
     margin-left: 8px;
   }
 
-  &:hover { background: rgba($dark-grey-4, .9); }
+  &:hover { background: rgba($dark-grey-6, .9); }
 
   &:focus { outline: none; }
 
@@ -100,13 +100,13 @@ $h: 32px;
 
     &[disabled] {
       cursor: not-allowed;
-      background: rgba($light-grey-4, .9);
+      background: $light-grey-6;
       color: $light-grey-2;
     }
   }
 
   &.init-theme-link {
-    background: transparent; border-color: transparent; box-shadow: none; color: $dark-grey-4;
+    background: transparent; border-color: transparent; box-shadow: none; color: $dark-grey-6;
 
     &:hover, &:focus {
       color: lighten($dark-grey-4, 10%);
@@ -193,9 +193,19 @@ $h: 32px;
     &[disabled] {
       cursor: not-allowed;
       color: $light-grey-2;
-
+      border-radius: 0;
       &:hover, &:focus {
         background: inherit;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $h - 2px;
+        border-bottom: 2px solid $light-grey-2;
       }
     }
   }
