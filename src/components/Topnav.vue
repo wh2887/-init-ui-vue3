@@ -1,8 +1,8 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="goBackHome">
+    <router-link class="logo" to="/">
       <img src="src/assets/logo-top.png" alt="回到首页">
-    </div>
+    </router-link>
     <ul class="menu">
       <li>
         <router-link to="/doc">文档</router-link>
@@ -11,7 +11,7 @@
         <router-link to="/doc/switch">组件</router-link>
       </li>
     </ul>
-    <div class="toggleAside" @click="toggleMenu">
+    <div v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
       <Icon name="main"/>
     </div>
   </div>
@@ -22,12 +22,11 @@ import {inject, Ref} from 'vue';
 import Icon from './Icon.vue';
 
 export default {
-  components: {
-    Icon
-  },
-  methods: {
-    goBackHome() {
-      this.$router.push('/');
+  components: {Icon},
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
     }
   },
   setup() {
