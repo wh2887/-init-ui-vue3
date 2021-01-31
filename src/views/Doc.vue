@@ -12,7 +12,7 @@
         <h2>组件列表</h2>
         <ol ref="list" v-for="(item,id) in compList" :key="id">
           <li>
-            <router-link active-class="selected" :to="item.path" @click="selected">{{ item.name }}</router-link>
+            <router-link :to="item.path" @click="selected">{{ item.name }}</router-link>
           </li>
         </ol>
       </aside>
@@ -44,13 +44,8 @@ export default {
       {id: 2, path: '/doc/dialog', name: 'Dialog'},
       {id: 3, path: '/doc/tabs', name: 'Tabs'},
     ];
-    const selected = (e: MouseEvent) => {
-      console.log(e.currentTarget);
-    };
-
     const menuVisible = inject<ref<boolean>>('menuVisible');
-    console.log(list.value);
-    return {menuVisible, list, docList, compList, selected};
+    return {menuVisible, list, docList, compList};
   }
 };
 </script>
@@ -60,6 +55,11 @@ export default {
 
 $bg: #E7EEF9;
 $main: #2143C8;
+.router-link-active {
+  color: $main;
+  background: rgba($main, .1);
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -114,16 +114,13 @@ aside {
     > li {
       width: 100%;
       margin-bottom: 2px;
+
       > a {
         border: none;
         padding: 4px 16px;
         border-radius: 4px;
         display: inline-block;
         width: 100%;
-        &.selected {
-          color: $main;
-          background: rgba($main, .1);
-        }
 
         &:hover, &:focus {
           background: rgba($main, .1);
@@ -134,7 +131,6 @@ aside {
           background: rgba($main, .1);
         }
       }
-
 
 
     }
