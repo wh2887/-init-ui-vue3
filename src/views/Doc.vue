@@ -12,7 +12,7 @@
         <h2>组件列表</h2>
         <ol ref="list" v-for="(item,id) in compList" :key="id">
           <li>
-            <router-link :to="item.path" @click="selected">{{ item.name }}</router-link>
+            <router-link :to="item.path">{{ item.name }}</router-link>
           </li>
         </ol>
       </aside>
