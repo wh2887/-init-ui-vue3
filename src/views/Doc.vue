@@ -89,15 +89,17 @@ $main: #2143C8;
   }
 
   > main {
+    margin: 0 auto;
     flex-grow: 1;
     padding: 16px;
     background: white;
+    max-width: 800px;
   }
 }
 
 aside {
   background: white;
-  width: 150px;
+  width: 220px;
   position: fixed;
   padding: 70px 16px 16px;
   top: 0;
@@ -105,6 +107,9 @@ aside {
   height: 100%;
   box-shadow: 0 0 0 2px rgba(#333, .1);
   z-index: 20;
+  @media (max-width: 500px) {
+    width: 150px;
+  }
 
   > h2 {
     margin-bottom: 4px;
