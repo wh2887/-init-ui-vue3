@@ -1,11 +1,16 @@
 <template>
-    <div>
-        Intro 介绍页
-    </div>
+  <article class="markdown-body" v-html="md">
+  </article>
 </template>
 
-<script lang="ts">
-export default {}
+<script>
+import md from '../markdown/intro.md'
+
+export default {
+  data(){
+    return{md}
+  }
+}
 </script>
 
 <style lang="scss" scoped>
