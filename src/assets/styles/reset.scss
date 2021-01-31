@@ -33,4 +33,14 @@ h1, h2, h3, h4, h5, h6 {
 button{
   outline: none;
 }
+table{
+  width:100%;
+  border-collapse:collapse;
+  letter-spacing:1px;
+}
+table,th,tr,td{
+  border-bottom:1px solid #E5E5EA;
+  padding:16px;
+  text-align: center;
+}
 

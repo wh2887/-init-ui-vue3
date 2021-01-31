@@ -1,6 +1,7 @@
 <template>
   <div>
-    <button class="init-switch" @click="toggle" :class="{'init-checked':value}"><span></span></button>
+    <button class="init-switch" :disabled="disabled"
+            @click="toggle" :class="{'init-checked':value}"><span></span></button>
   </div>
 </template>
 
@@ -8,7 +9,11 @@
 
 export default {
   props: {
-    value: Boolean
+    value: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
     const toggle = () => {
@@ -50,6 +55,10 @@ $h2: $h - 4px;
 
   &:active {
     > span {width: $h2 + 4px;}
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
   }
 }
 </style>
