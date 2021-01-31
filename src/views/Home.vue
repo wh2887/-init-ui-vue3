@@ -93,20 +93,27 @@ $main: #2143C8;
 
 .features {
   margin: 64px auto;
-  width: 400px;
+  padding: 0 16px;
   @media (min-width: 800px) {
     width: 800px;
+    >ul {
+      >li {
+        width: 50%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
+    >ul {
+      >li {
+        width: 33.3333%;
+      }
+    }
   }
-
-  > ul {
+  >ul {
     display: flex;
     flex-wrap: wrap;
-
-    > li {
-      width: 400px;
+    >li {
       margin: 16px 0;
       display: grid;
       justify-content: start;
@@ -116,19 +123,16 @@ $main: #2143C8;
         "icon text";
       grid-template-columns: 80px auto;
       grid-template-rows: 1fr auto;
-
-      > svg {
+      >svg {
         grid-area: icon;
         width: 64px;
         height: 64px;
       }
-
-      > h3 {
+      >h3 {
         grid-area: title;
         font-size: 28px;
       }
-
-      > p {
+      >p {
         grid-area: text
       }
     }
