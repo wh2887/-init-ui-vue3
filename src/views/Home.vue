@@ -2,7 +2,7 @@
   <div class="init-home-wrapper">
     <Topnav/>
     <div class="banner">
-      <h1>Init UI</h1>
+      <Icon name="logo"/>
       <h2>一个简单的 UI 框架</h2>
       <p class="actions">
         <a href="https://github.com/wh2887/-init-ui-vue3">GitHub</a>
@@ -39,9 +39,11 @@
 
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
+import Icon from '../components/Icon.vue';
 
 export default {
   components: {
+    Icon,
     Topnav
   }
 };
@@ -63,6 +65,10 @@ $main: #2143C8;
     color: $main;
     background: linear-gradient(180deg, rgba(229, 237, 248, 1) 0%, rgba(242, 246, 252, 1) 100%);
     clip-path: ellipse(80% 60% at 50% 40%);
+
+    > .icon-wrapper {
+      font-size: 128px;
+    }
 
     > .actions {
       padding: 8px;

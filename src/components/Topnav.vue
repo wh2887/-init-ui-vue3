@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
     <router-link class="logo" to="/">
-      <img src="src/assets/logo-top.png" alt="回到首页">
+      <Icon name="logo-top" v-if="toggleMenuButtonVisible"/>
     </router-link>
     <ul class="menu">
       <li>

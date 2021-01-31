@@ -1,6 +1,6 @@
 <template>
   <div class="icon-wrapper">
-    <svg class="icon" aria-hidden="true">
+    <svg class="icon" aria-hidden="true" >
       <use :xlink:href="'#icon-'+`${name}`"></use>
     </svg>
   </div>
@@ -9,7 +9,7 @@
 <script lang="ts">
 export default {
   props: {
-    name: String
+    name: String,
   }
 };
 </script>
