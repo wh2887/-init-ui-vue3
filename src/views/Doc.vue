@@ -89,7 +89,6 @@ $main: #2143C8;
   }
 
   > main {
-    margin: 0 auto;
     flex-grow: 1;
     padding: 16px;
     background: white;
@@ -99,7 +98,7 @@ $main: #2143C8;
 
 aside {
   background: white;
-  width: 220px;
+  width: 150px;
   position: fixed;
   padding: 70px 16px 16px;
   top: 0;
