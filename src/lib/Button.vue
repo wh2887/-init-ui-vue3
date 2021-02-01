@@ -63,7 +63,14 @@ $h: 32px;
   display: inline-flex; justify-content: center; align-items: center; white-space: nowrap;
   color: $light-grey-6; position: relative; overflow: hidden;
 
-  &.init-theme-button + &.init-theme-button, &.init-theme-link + &.init-theme-link {
+  &.init-theme-button + &.init-theme-button,
+  &.init-theme-link + &.init-theme-link,
+  &.init-theme-text + &.init-theme-text,
+  &.init-theme-link + &.init-theme-button,
+  &.init-theme-button + &.init-theme-link,
+  &.init-theme-link + &.init-theme-text,
+  &.init-theme-button + &.init-theme-text,
+  &.init-theme-text + &.init-theme-button{
     margin-left: 8px;
   }
 

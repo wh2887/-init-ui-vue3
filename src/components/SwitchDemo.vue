@@ -28,7 +28,6 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
 import Switch1Demo from './demo-code/Switch1Demo.vue';
 import Switch2Demo from './demo-code/Switch2Demo.vue';
 import Demo from './Demo.vue';
