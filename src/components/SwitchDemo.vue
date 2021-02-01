@@ -4,7 +4,7 @@
     <h2>基本用法</h2>
     <div class="demo-sample">
       <div class="demo-component">
-        <Switch v-model:value="keySwitch"/>
+        <Switch1Demo/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -18,7 +18,7 @@
     <h2>禁用状态</h2>
     <div class="demo-sample">
       <div class="demo-component">
-        <Switch v-model:value="keySwitch" disabled/>
+        <Switch2Demo/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -54,12 +54,13 @@
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
 import Button from '../lib/Button.vue';
+import Switch1Demo from './demo-code/Switch1Demo.vue';
+import Switch2Demo from './demo-code/Switch2Demo.vue';
 
 export default {
-  components: {Button, Switch},
+  components: {Switch2Demo, Switch1Demo, Button},
   setup() {
     const keySwitch = ref(false);
     return {keySwitch};
