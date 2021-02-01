@@ -29,16 +29,14 @@
 
 <script lang="ts">
 import {ref} from 'vue';
-import Button from '../lib/Button.vue';
 import Switch1Demo from './demo-code/Switch1Demo.vue';
 import Switch2Demo from './demo-code/Switch2Demo.vue';
 import Demo from './Demo.vue';
 
 export default {
-  components: {Demo, Button},
+  components: {Demo},
   setup() {
-    const keySwitch = ref(false);
-    return {keySwitch, Switch1Demo, Switch2Demo, Prism};
+    return {Switch1Demo, Switch2Demo};
   }
 };
 </script>
