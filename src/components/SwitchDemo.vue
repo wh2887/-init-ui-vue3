@@ -2,40 +2,23 @@
   <h1> Switch 组件示例 </h1>
   <Demo :component="Switch1Demo"/>
   <Demo :component="Switch2Demo"/>
-  <div class="demo api">
-    <h2>API</h2>
-    <table>
-      <tr>
-        <th>属性</th>
-        <th>说明</th>
-        <th>类型</th>
-        <th>默认值</th>
-      </tr>
-      <tr>
-        <td>value</td>
-        <td>是否选中</td>
-        <td>boolean</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>disabled</td>
-        <td>禁用状态</td>
-        <td>boolean</td>
-        <td>false</td>
-      </tr>
-    </table>
-  </div>
+  <APIDemo :describe="describe"/>
 </template>
 
 <script lang="ts">
 import Switch1Demo from './demo-code/Switch1Demo.vue';
 import Switch2Demo from './demo-code/Switch2Demo.vue';
+import APIDemo from './APIDemo.vue';
 import Demo from './Demo.vue';
 
 export default {
-  components: {Demo},
+  components: {Demo, APIDemo},
   setup() {
-    return {Switch1Demo, Switch2Demo};
+    const describe = [
+      {attribute: 'value', explain: '是否选中', type: 'boolean', defaultValue: 'false'},
+      {attribute: 'disabled', explain: '禁用状态', type: 'boolean', defaultValue: 'false'},
+    ];
+    return {Switch1Demo, Switch2Demo, describe};
   }
 };
 </script>
