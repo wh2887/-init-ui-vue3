@@ -1,33 +1,7 @@
 <template>
   <h1> Switch 组件示例 </h1>
-  <div class="demo">
-    <h2>基本用法</h2>
-    <div class="demo-sample">
-      <div class="demo-component">
-        <component :is="Switch1Demo"/>
-      </div>
-      <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
-        <pre class="language-html" v-html="Prism.highlight(Switch1Demo.__sourceCode,Prism.languages.html, 'html')"/>
-      </div>
-    </div>
-  </div>
-  <div class="demo">
-    <h2>禁用状态</h2>
-    <div class="demo-sample">
-      <div class="demo-component">
-        <component :is="Switch2Demo"/>
-      </div>
-      <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code">
-        <pre class="language-html" v-html="Prism.highlight(Switch2Demo.__sourceCode,Prism.languages.html, 'html')"/>
-      </div>
-    </div>
-  </div>
+  <Demo :component="Switch1Demo"/>
+  <Demo :component="Switch2Demo"/>
   <div class="demo api">
     <h2>API</h2>
     <table>
@@ -58,13 +32,10 @@ import {ref} from 'vue';
 import Button from '../lib/Button.vue';
 import Switch1Demo from './demo-code/Switch1Demo.vue';
 import Switch2Demo from './demo-code/Switch2Demo.vue';
-import 'prismjs';
-import 'prismjs/themes/prism.css';
-
-const Prism = (window as any).Prism;
+import Demo from './Demo.vue';
 
 export default {
-  components: {Button},
+  components: {Demo, Button},
   setup() {
     const keySwitch = ref(false);
     return {keySwitch, Switch1Demo, Switch2Demo, Prism};
