@@ -4,7 +4,7 @@
     <h2>基本用法</h2>
     <div class="demo-sample">
       <div class="demo-component">
-        <Switch1Demo/>
+        <component :is="Switch1Demo"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -18,7 +18,7 @@
     <h2>禁用状态</h2>
     <div class="demo-sample">
       <div class="demo-component">
-        <Switch2Demo/>
+        <component :is="Switch2Demo"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -60,7 +60,7 @@ import Switch1Demo from './demo-code/Switch1Demo.vue';
 import Switch2Demo from './demo-code/Switch2Demo.vue';
 
 export default {
-  components: {Switch2Demo, Switch1Demo, Button},
+  components: {Button},
   setup() {
     const keySwitch = ref(false);
     return {keySwitch, Switch1Demo, Switch2Demo};
