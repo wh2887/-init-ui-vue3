@@ -10,7 +10,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="keySwitch" /&gt;</pre>
+        <pre v-text="Switch1Demo.__sourceCode"></pre>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="keySwitch" disabled /&gt;</pre>
+        <pre v-text="Switch2Demo.__sourceCode"></pre>
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@ export default {
   components: {Switch2Demo, Switch1Demo, Button},
   setup() {
     const keySwitch = ref(false);
-    return {keySwitch};
+    return {keySwitch, Switch1Demo, Switch2Demo};
   }
 };
 </script>
