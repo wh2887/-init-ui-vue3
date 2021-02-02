@@ -3,7 +3,8 @@
 一款基于 Vue 3 技术栈开发的极简 UI 组件库。
 
 手机扫码预览
-![手机扫码](https://gitee.com/hellow2887/blogimage/raw/master/img/init-qrCode.png)
+
+![](https://gitee.com/hellow2887/blogimage/raw/master/img/init-qrCode128.png)
 
 ## 技术栈
 - Vue 3
