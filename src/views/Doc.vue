@@ -74,7 +74,8 @@ $main: #2143C8;
   > .content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: 316px;
+    padding-right: 16px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -89,16 +90,15 @@ $main: #2143C8;
   }
 
   > main {
-    flex-grow: 1;
     padding: 16px;
     background: white;
-    max-width: 800px;
+    max-width: 100vw;
   }
 }
 
 aside {
   background: white;
-  width: 150px;
+  width: 210px;
   position: fixed;
   padding: 70px 16px 16px;
   top: 0;
@@ -141,7 +141,8 @@ aside {
   }
 
   main {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
 </style>

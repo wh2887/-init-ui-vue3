@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 table {
-  width: 100%;
+  overflow-x: auto;
   border-collapse: collapse;
   letter-spacing: 1px;
 }

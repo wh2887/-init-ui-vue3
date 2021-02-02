@@ -5,7 +5,7 @@
   <Demo :component="Button2Demo" description="Button 组件提供三种尺寸可选，可以在不同场景下选择合适的按钮尺寸。"/>
   <Demo :component="Button3Demo" description="按钮等级有三种类型：主按钮、默认按钮、危险按钮。"/>
   <Demo :component="Button4Demo" description="按钮不可用状态。"/>
-  <Demo :component="Button5Demo" description=swit"在按钮上显示加载状态。"/>
+  <Demo :component="Button5Demo" description="在按钮上显示加载状态。" />
   <APIDemo :describe="describe"/>
 </template>
 

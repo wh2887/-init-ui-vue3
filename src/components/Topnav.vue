@@ -54,10 +54,8 @@ $main: #2143C8;
     margin-right: auto;
     display: flex;
     align-items: center;
-
-    > img {
-      max-height: 1.5em;
-      max-width: 100%;
+    > .icon-wrapper{
+      font-size: 2em;
     }
   }
 

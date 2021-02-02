@@ -50,6 +50,7 @@ export default {
 
 .demo {
   padding: 10px 0;
+  width: 100%;
   > p{
     padding: 10px 0;
     color: $dark-grey-2;
@@ -58,7 +59,6 @@ export default {
 
   &-sample {
     margin: 10px 0;
-    border: 1px solid $light-grey-5;
     padding: 8px 16px;
 
     &:hover {
@@ -78,7 +78,7 @@ export default {
     }
 
     > .demo-code {
-
+      overflow-x: auto;
     }
   }
 }
