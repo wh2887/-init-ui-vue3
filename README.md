@@ -2,9 +2,16 @@
 
 一款基于 Vue 3 技术栈开发的极简 UI 组件库。
 
-手机扫码预览
+## 预览方式
 
-![](https://gitee.com/hellow2887/blogimage/raw/master/img/init-qrCode128.png)
+1. 手机扫码预览
+
+
+  ![](https://gitee.com/hellow2887/blogimage/raw/master/img/init-qrCode128.png)
+
+2. 电脑点击链接预览
+
+  [点击跳转在线地址](https://wh2887.github.io/init-ui-vue3-website/index.html#/)
 
 ## 技术栈
 - Vue 3
