@@ -1,12 +1,12 @@
 <template>
-  <h1>Button 组件示例</h1>
-  <p style="margin: 10px 0;color: #636366;font-size: 14px;">常用的操作按钮。</p>
-  <Demo :component="Button1Demo" description="基础的按钮用法。提供三种不同类型的按钮样式：默认按钮，文本按钮，链接按钮。"/>
-  <Demo :component="Button2Demo" description="Button 组件提供三种尺寸可选，可以在不同场景下选择合适的按钮尺寸。"/>
-  <Demo :component="Button3Demo" description="按钮等级有三种类型：主按钮、默认按钮、危险按钮。"/>
-  <Demo :component="Button4Demo" description="按钮不可用状态。"/>
-  <Demo :component="Button5Demo" description="在按钮上显示加载状态。" />
-  <APIDemo :describe="describe"/>
+    <h1>Button 组件示例</h1>
+    <p style="margin: 10px 0;color: #636366;font-size: 14px;">常用的操作按钮。</p>
+    <Demo :component="Button1Demo" description="基础的按钮用法。提供三种不同类型的按钮样式：默认按钮，文本按钮，链接按钮。"/>
+    <Demo :component="Button2Demo" description="Button 组件提供三种尺寸可选，可以在不同场景下选择合适的按钮尺寸。"/>
+    <Demo :component="Button3Demo" description="按钮等级有三种类型：主按钮、默认按钮、危险按钮。"/>
+    <Demo :component="Button4Demo" description="按钮不可用状态。"/>
+    <Demo :component="Button5Demo" description="在按钮上显示加载状态。" />
+    <APIDemo :describe="describe"/>
 </template>
 
 <script lang="ts">
@@ -36,7 +36,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

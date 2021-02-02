@@ -1,6 +1,6 @@
 <template>
+  <h2>API</h2>
   <div class="demo api">
-    <h2>API</h2>
     <table>
       <tr>
         <th>属性</th>
@@ -40,8 +40,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-table {
+.demo {
+  width: 100%;
   overflow-x: auto;
+}
+
+table {
+  padding: 10px;
   border-collapse: collapse;
   letter-spacing: 1px;
 }
@@ -50,5 +55,9 @@ table, th, tr, td {
   border-bottom: 1px solid #E5E5EA;
   padding: 16px;
   text-align: center;
+}
+
+th td {
+  white-space: nowrap;
 }
 </style>

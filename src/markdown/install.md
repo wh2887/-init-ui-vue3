@@ -11,5 +11,3 @@ npm install init-ui-vue3
 ```
 yarn add init-ui-vue3
 ```
-
-下一节：[开始使用](#/doc/get-started)
