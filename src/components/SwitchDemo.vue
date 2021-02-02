@@ -1,7 +1,8 @@
 <template>
   <h1> Switch 组件示例 </h1>
-  <Demo :component="Switch1Demo"/>
-  <Demo :component="Switch2Demo"/>
+  <p style="margin: 10px 0;color: #636366;font-size: 14px;">表示两种相互对立的状态间的切换，多用于触发「开/关」。</p>
+  <Demo :component="Switch1Demo" description="最简单的用法。"/>
+  <Demo :component="Switch2Demo" description="Switch 失效状态。"/>
   <APIDemo :describe="describe"/>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
   <h1>Tabs 组件示例</h1>
-  <Demo :component="Tabs1Demo"/>
+  <p style="margin: 10px 0;color: #636366;font-size: 14px;">
+    分隔内容上有关联但属于不同类别的数据集合。
+  </p>
+  <Demo :component="Tabs1Demo" description="默认选中 '导航1'。 "/>
   <APIDemo :describe="describe"/>
 </template>
 

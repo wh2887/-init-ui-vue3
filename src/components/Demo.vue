@@ -1,6 +1,7 @@
 <template>
   <div class="demo">
     <h2>{{ component.__sourceCodeTitle }}</h2>
+    <p>{{description}}</p>
     <div class="demo-sample">
       <div class="demo-component">
         <component :is="component"/>
@@ -16,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import {computed,ref} from 'vue';
+import {computed, ref} from 'vue';
 import Button from '../lib/Button.vue';
 import 'prismjs';
 import 'prismjs/themes/prism.css';
@@ -26,16 +27,20 @@ export default {
   components: {Button},
   props: {
     component: Object,
+    description: {
+      type: String,
+      default: 'xxxx'
+    }
   },
   setup(props) {
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html');
     });
-    const codeVisible = ref(false)
-    const toggleCode = ()=>{
-      codeVisible.value = !codeVisible.value
-    }
-    return {Prism, html,codeVisible,toggleCode};
+    const codeVisible = ref(false);
+    const toggleCode = () => {
+      codeVisible.value = !codeVisible.value;
+    };
+    return {Prism, html, codeVisible, toggleCode};
   }
 };
 </script>
@@ -45,6 +50,11 @@ export default {
 
 .demo {
   padding: 10px 0;
+  > p{
+    padding: 10px 0;
+    color: $dark-grey-2;
+    font-size: 14px;
+  }
 
   &-sample {
     margin: 10px 0;

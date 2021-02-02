@@ -1,7 +1,8 @@
 <template>
   <h1>Dialog 组件示例</h1>
-  <Demo :component="Dialog1Demo"/>
-  <Demo :component="Dialog2Demo"/>
+  <p style="margin: 10px 0;color: #636366;font-size: 14px;">在保留当前页面状态的情况下，告知用户并承载相关操作。</p>
+  <Demo :component="Dialog1Demo" description="弹出一个对话框。"/>
+  <Demo :component="Dialog2Demo" description="支持传入函数可选项，打开对话框。"/>
   <APIDemo :describe="describe"/>
 </template>
 
