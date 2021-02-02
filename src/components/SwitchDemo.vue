@@ -22,37 +22,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-@import "src/lib/styles/helper";
-
-.demo {
-  padding: 10px 0;
-
-  &-sample {
-    margin: 10px 0;
-    border: 1px solid $light-grey-5;
-    padding: 8px 16px;
-
-    &:hover {
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
-    }
-
-    > .demo-component, .demo-actions {
-      padding-bottom: 10px;
-    }
-
-    > .demo-component {
-
-    }
-
-    > .demo-actions {
-
-    }
-
-    > .demo-code {
-
-    }
-  }
-}
-</style>
