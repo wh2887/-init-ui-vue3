@@ -4,7 +4,7 @@
 然后在你的代码中引入提供的组件：
 
 ```
-import {Button, Tabs, Switch, Dialog} from "init-ui-3"
+import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "init-ui-3"
 ```
 
 就可以使用我提供的组件了。
@@ -20,7 +20,7 @@ import {Button, Tabs, Switch, Dialog} from "init-ui-3"
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "init-ui-vue3"
+import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "init-ui-vue3"
 export default {
   components: {Button}
 }
