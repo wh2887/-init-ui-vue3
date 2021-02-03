@@ -29,19 +29,27 @@ export default {
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    const moveBottom = () => {
-      const {width} = selectedItem.value.getBoundingClientRect();
-      indicator.value.style.width = width + 'px';
-      const {left: left1} = container.value.getBoundingClientRect();
-      const {left: left2} = selectedItem.value.getBoundingClientRect();
-      const left = left2 - left1;
-      indicator.value.style.left = left + 'px';
-    };
-    onMounted(() => { moveBottom(); });
-    onUpdated(() => { moveBottom(); });
+    onMounted(() => {
+      watchEffect(() => {
+        const {
+          width
+        } = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = width + 'px';
+        const {
+          left: left1
+        } = container.value.getBoundingClientRect();
+        const {
+          left: left2
+        } = selectedItem.value.getBoundingClientRect();
+        const left = left2 - left1;
+        indicator.value.style.left = left + 'px';
+      }, {
+        flush: 'post'
+      });
+    });
     const defaults = content.slots.default();
     defaults.forEach(tag => {
-    //@ts-ignore
+      //@ts-ignore
       if (tag.type.name !== Tab.name) {
         throw new Error('Tabs 子标签必须是 Tab！');
       }
