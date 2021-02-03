@@ -1,7 +1,5 @@
 <template>
-  <button class="init-button" @click="onClick" v-bind="$attrs"
-          :class="classes" :disabled="disabled"
-  >
+  <button class="init-button" @click="onClick" v-bind="$attrs" :class="classes" :disabled="disabled">
     <span v-if="loading" class="init-loadingIndicator"></span>
     <slot/>
   </button>
@@ -70,7 +68,7 @@ $h: 32px;
   &.init-theme-button + &.init-theme-link,
   &.init-theme-link + &.init-theme-text,
   &.init-theme-button + &.init-theme-text,
-  &.init-theme-text + &.init-theme-button{
+  &.init-theme-text + &.init-theme-button {
     margin-left: 8px;
   }
 
@@ -201,9 +199,11 @@ $h: 32px;
       cursor: not-allowed;
       color: $light-grey-2;
       border-radius: 0;
+
       &:hover, &:focus {
         background: inherit;
       }
+
       &:after {
         content: '';
         display: block;

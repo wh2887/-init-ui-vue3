@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <slot/>
-  </div>
+  <slot/>
 </template>
 
 <script lang="ts">
 export default {
-  name:'InitTab'
+  name: 'InitTab'
 };
 </script>
 
