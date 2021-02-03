@@ -40,7 +40,12 @@ export default {
     onMounted(() => { moveBottom(); });
     onUpdated(() => { moveBottom(); });
     const defaults = content.slots.default();
-    defaults.forEach(tag => { if (tag.type !== Tab) { throw new Error('Tabs 子标签必须是 Tab！');}});
+    defaults.forEach(tag => {
+    //@ts-ignore
+      if (tag.type.name !== Tab.name) {
+        throw new Error('Tabs 子标签必须是 Tab！');
+      }
+    });
     const current = computed(() => { return defaults.find(tag => tag.props.title === props.selected); });
     const titles = defaults.map(tag => {return tag.props.title;});
     const select = (title: string) => {
