@@ -5,6 +5,12 @@
     </router-link>
     <ul class="menu">
       <li>
+        <a href="https://github.com/wh2887/-init-ui-vue3">Github</a>
+      </li>
+      <li>
+        <a href="https://gitee.com/hellow2887/init-ui-vue3-store">Gitee</a>
+      </li>
+      <li>
         <router-link to="/doc">文档</router-link>
       </li>
       <li>
