@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import {computed} from 'vue';
+import {computed, ref} from 'vue';
 import {useRipple} from './useRipple';
 
 export default {
@@ -70,7 +70,7 @@ $h: 32px;
   &.init-theme-button + &.init-theme-link,
   &.init-theme-link + &.init-theme-text,
   &.init-theme-button + &.init-theme-text,
-  &.init-theme-text + &.init-theme-button{
+  &.init-theme-text + &.init-theme-button {
     margin-left: 8px;
   }
 
@@ -201,9 +201,11 @@ $h: 32px;
       cursor: not-allowed;
       color: $light-grey-2;
       border-radius: 0;
+
       &:hover, &:focus {
         background: inherit;
       }
+
       &:after {
         content: '';
         display: block;
@@ -228,7 +230,7 @@ $h: 32px;
 
   > .init-button-ripple {
     position: absolute; border-radius: 50%; transform: scale(0);
-    animation: ripple 600ms linear; background-color: rgba(255, 255, 255, 0.5);
+    animation: ripple 600ms linear; background-color: rgba(255,255,255,.3);
   }
 }
 
@@ -238,6 +240,6 @@ $h: 32px;
 }
 
 @keyframes ripple {
-  to { transform: scale(4); opacity: 0; }
+  to { transform: scale(6); opacity: 0; }
 }
 </style>
