@@ -7,11 +7,11 @@
 1. 手机扫码预览
 
 
-  ![](https://gitee.com/hellow2887/blogimage/raw/master/img/init-qrCode128.png)
+  ![](https://gitee.com/hellow2887/blogimage/raw/master/img/giteeQRCode2.png)
 
 2. 电脑点击链接预览
 
-  [点击跳转在线地址](https://wh2887.github.io/init-ui-vue3-website/index.html#/)
+  [点击跳转在线地址(Gitee)](http://hellow2887.gitee.io/init-ui-vue3/#/)
 
 ## 技术栈
 - Vue 3

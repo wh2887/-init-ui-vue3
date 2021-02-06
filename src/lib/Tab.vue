@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <slot/>
-  </div>
+  <slot/>
 </template>
 
 <script lang="ts">
-export default {};
+export default {
+  name: 'InitTab'
+};
 </script>
 
 <style lang="scss">

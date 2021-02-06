@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <button class="init-switch" :disabled="disabled"
-            @click="toggle" :class="{'init-checked':value}"><span></span></button>
-  </div>
+  <button class="init-switch" :disabled="disabled" @click="toggle" :class="{'init-checked':value}">
+    <span></span>
+  </button>
 </template>
 
 <script lang="ts">
-
 export default {
   props: {
     value: Boolean,

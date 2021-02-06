@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-import Tabs from '../../lib/Tabs.vue';
-import Tab from '../../lib/Tab.vue';
+// 此组件引入方式为开发使用，生产者使用请移步 [开始使用] 这一章节！
+import {Tabs,Tab} from '../../lib/index';
 import {ref} from 'vue';
 
 export default {

@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts">
-import Button from '../../lib/Button.vue';
-import Dialog from '../../lib/Dialog.vue';
+// 此组件引入方式为开发使用，生产者使用请移步 [开始使用] 这一章节！
+import {Button,Dialog} from '../../lib/index';
 import {ref} from 'vue';
 
 export default {

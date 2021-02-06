@@ -1,5 +1,5 @@
-import Dialog from './Dialog.vue';
 import {createApp, h} from 'vue';
+import Dialog from './Dialog.vue';
 
 type OptionsType = {
   title: String,
