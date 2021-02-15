@@ -28,7 +28,8 @@
 
 ## 相关文档
 
-文档列表及链接
+1. [Vue 模板与渲染函数](https://www.yuque.com/docs/share/ee3ab99a-4a3c-4592-a7d8-063cad4052a5?#《Vue模板与渲染函数》)
+2. [npm 包发布步骤](https://www.yuque.com/docs/share/fb641c48-e7ae-4224-b41c-7089f6d1e60d?#《npm包发布步骤》)
 
 ## 安装依赖
 
